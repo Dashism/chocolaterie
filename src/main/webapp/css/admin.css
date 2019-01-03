@@ -1,0 +1,39 @@
+/* Global */
+body > div.container {
+	margin-top: 120px;
+}
+
+h1, h2 {
+	text-align: center;
+}
+
+div.chocoList, div.chocoForm {
+	display: inline-block;
+	width: 45%;
+}
+
+/* Tableau */
+th, td {
+	text-align: center;
+}
+
+div.chocoList {
+	float: left;
+}
+
+th.chocoActions {
+	width: 120px;
+}
+
+td.chocoActions {
+	display: grid;
+}
+
+/* Formulaire */
+div.chocoForm {
+	float: right;
+}
+
+a.chocoNew {
+	float: right;
+}

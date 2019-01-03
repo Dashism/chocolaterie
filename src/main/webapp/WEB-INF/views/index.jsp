@@ -39,7 +39,7 @@
 				<a href="eshop.html">Boutique en ligne</a>
 			</h2>
 			<h2>
-				<a href="visit.html">Visiter la chocolaterie</a>
+				<a href="admin.html">Administration</a>
 			</h2>
 			<h2>
 				<a href="">Contact</a>

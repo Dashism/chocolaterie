@@ -1,12 +1,7 @@
 package fr.formation.choco.persistance;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.persistence.TypedQuery;
-
-import org.apache.log4j.Logger;
-import org.springframework.stereotype.Component;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import fr.formation.choco.metier.ChocoType;
 
@@ -16,24 +11,7 @@ import fr.formation.choco.metier.ChocoType;
  * @author Adminl
  *
  */
-@Component
-public class ChocoTypeDao extends AbstractDao<ChocoType> {
-
-	private static final Logger LOGGER = Logger.getLogger(ChocoTypeDao.class);
-
-	@Override
-	public ChocoType read(Integer id) {
-		return this.read(id, new ChocoType());
-	}
-
-	@Override
-	public List<ChocoType> readAll() {
-		List<ChocoType> types = new ArrayList<>();
-		TypedQuery<ChocoType> query = this.em
-				.createQuery(JpqlQueries.SELECT_ALL_CHOCOTYPE, ChocoType.class);
-		types.addAll(query.getResultList());
-		LOGGER.debug(types.size() + " types de chocolats chargé depuis la BDD.");
-		return types;
-	}
+@Repository
+public interface ChocoTypeDao extends JpaRepository<ChocoType, Integer> {
 
 }

@@ -14,22 +14,22 @@ public class ChocoService {
 	private ChocoTypeDao dao;
 
 	public List<ChocoType> getChocoTypes() {
-		return this.dao.readAll();
+		return this.dao.findAll();
 	}
 
 	public Object getOne(Integer id) {
-		return this.dao.read(id);
+		return this.dao.getOne(id);
 	}
 
 	public void addChoco(ChocoType chocoType) {
-		this.dao.create(chocoType);
+		this.dao.save(chocoType);
 	}
 	
 	public void updateChoco(ChocoType chocoType) {
-		this.dao.update(chocoType);
+		this.dao.save(chocoType);
 	}
 	
 	public void deleteChoco(Integer id) {
-		this.dao.delete(id);
+		this.dao.deleteById(id);
 	}
 }

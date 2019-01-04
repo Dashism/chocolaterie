@@ -14,10 +14,10 @@ public class StockService {
 	private ChocoStockDao dao;
 
 	public List<ChocoStock> getChocoStocks() {
-		return this.dao.readAll();
+		return this.dao.findAll();
 	}
 
 	public ChocoStock getChocoStock(Integer id) {
-		return this.dao.read(id);
+		return this.dao.getOne(id);
 	}
 }

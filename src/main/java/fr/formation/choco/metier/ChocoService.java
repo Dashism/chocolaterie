@@ -32,4 +32,8 @@ public class ChocoService {
 	public void deleteChoco(Integer id) {
 		this.dao.deleteById(id);
 	}
+
+	public ChocoType getByValue(String value) {
+		return this.dao.findByValue(value);
+	}
 }

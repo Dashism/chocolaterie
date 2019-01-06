@@ -10,8 +10,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import fr.formation.choco.ChocoConstants;
+import fr.formation.choco.metier.ChocoOrder;
 import fr.formation.choco.metier.ChocoService;
 import fr.formation.choco.metier.ChocoType;
+import fr.formation.choco.metier.OrderService;
 
 @Controller
 @RequestMapping("/")
@@ -22,6 +24,9 @@ public class ViewController {
 
 	@Autowired
 	private ChocoService chocoService;
+	
+	@Autowired
+	private OrderService orderService;
 	
 	@RequestMapping({ "", "index"})
 	public ModelAndView index() {
@@ -53,10 +58,16 @@ public class ViewController {
 	@RequestMapping(path = "eshop", method = RequestMethod.POST)
 	public ModelAndView eshopForm(String name, String address, String choco) {
 		ModelAndView mav = new ModelAndView("eshop");
+		ChocoOrder order = new ChocoOrder();
+		order.setName(name);
+		order.setAddress(address);
+		ChocoType type = this.chocoService.getByValue(choco);
+		order.setChoco(type);
+		this.orderService.addOrUpdate(order);
 		String message = String.format(
 				"Un colis au nom de %s, <C3><A0> l'adresse %s "
 				+ "avec du chocolat %s",
-				name, address, choco);
+				name, address, type.getLabel());
 		LOGGER.info(message);
 		mav.addObject("message", message);
 		return mav;

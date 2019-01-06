@@ -14,4 +14,5 @@ import fr.formation.choco.metier.ChocoType;
 @Repository
 public interface ChocoTypeDao extends JpaRepository<ChocoType, Integer> {
 
+	ChocoType findByValue(String value);
 }

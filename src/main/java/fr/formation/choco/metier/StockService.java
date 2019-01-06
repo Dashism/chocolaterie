@@ -19,5 +19,13 @@ public class StockService {
 
 	public ChocoStock getChocoStock(Integer id) {
 		return this.dao.getOne(id);
-	}
+    }
+    
+    public ChocoStock addOrUpdate(ChocoStock choco) {
+        return this.dao.save(choco);
+    }
+
+    public void delete(Integer id) {
+        this.dao.deleteById(id);
+    }
 }

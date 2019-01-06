@@ -5,8 +5,8 @@ $(document).ready(function() {
 			  var id = ui.item.element[0].id;
 			  $.ajax({
 				  url: "http://localhost:8080/chocolaterie/webservices/stock/" + id
-			  }).done(function(stock) {
-				 var nbStock = parseInt(stock);
+			  }).done(function(choco) {
+				 var nbStock = parseInt(choco.stock);
 				 var stockinfoDiv = $("#stockinfo");
 				 stockinfoDiv.empty();
 				 if (nbStock > 0 ) {

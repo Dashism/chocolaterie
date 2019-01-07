@@ -46,6 +46,9 @@
 					</c:forEach>
 				</tbody>
 			</table>
+			<h3>
+				<a href="index.html">Retour à l'accueil</a>
+			</h3>
 		</div>
 		<div class="chocoForm">
 			<h2>${ isEdit ? "Modifier un type" : "Nouveau type" } :</h2>

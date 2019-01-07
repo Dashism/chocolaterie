@@ -17,5 +17,8 @@
 			</div>
 		</c:forEach>
 	</div>
+	<h3>
+		<a href="index.html">Retour à l'accueil</a>
+	</h3>
 </body>
 </html>

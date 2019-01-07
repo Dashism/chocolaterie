@@ -70,11 +70,16 @@
 			</div>
 			<button>Commander</button>
 		</form>
+		<h3>
+			<a href="index.html">Retour à l'accueil</a>
+		</h3>
 	</c:if>
 
 	<c:if test="${ not empty message }">
 		<div>${message}</div>
-		<a href="index.html">Retour à l'accueil</a>
+		<h3>
+			<a href="index.html">Retour à l'accueil</a>
+		</h3>
 	</c:if>
 </body>
 </html>

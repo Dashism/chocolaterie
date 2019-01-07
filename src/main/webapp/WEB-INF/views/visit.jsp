@@ -14,5 +14,8 @@
 </head>
 <body>
 	<h1>Visite virtuelle de la chocolaterie</h1>
+	<h3>
+		<a href="index.html">Retour à l'accueil</a>
+	</h3>
 </body>
 </html>

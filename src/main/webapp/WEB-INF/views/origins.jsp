@@ -8,5 +8,8 @@
 </head>
 <body>
 	<h1>Nos origines...</h1>
+	<h3>
+		<a href="index.html">Retour à l'accueil</a>
+	</h3>
 </body>
 </html>

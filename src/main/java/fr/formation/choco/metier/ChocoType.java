@@ -25,6 +25,9 @@ public class ChocoType {
 
 	@Column
 	private String value;
+	
+	@Column
+	private String url;
 
 	public ChocoType() {
 	}
@@ -61,5 +64,13 @@ public class ChocoType {
 
 	public void setValue(String value) {
 		this.value = value;
+	}
+
+	public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
 	}
 }

@@ -40,7 +40,9 @@ public class ViewController {
 	
 	@RequestMapping("chocolates")
 	public ModelAndView chocolates() {
-		return new ModelAndView("chocolates");
+		ModelAndView mav = new ModelAndView("chocolates");
+		mav.addObject("chocoTypes", this.chocoService.getChocoTypes());
+		return mav;
 	}
 
 	@RequestMapping("visit")

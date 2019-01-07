@@ -18,14 +18,16 @@
 </head>
 <body>
 	<h1>Administration des chocolats :</h1>
-	<div class="container">
+	<div class="admin-container">
 		<div class="chocoList">
+			<h2>Liste des types :</h2>
 			<table class="table table-stripped">
 				<thead>
 					<tr>
 						<th>Id</th>
 						<th>Label</th>
 						<th>Valeur</th>
+						<th class="url">Image</th>
 						<th class="chocoActions">Actions</th>
 					</tr>
 				</thead>
@@ -35,6 +37,7 @@
 							<td>${choco.id}</td>
 							<td>${choco.label}</td>
 							<td>${choco.value}</td>
+							<td>${choco.url}</td>
 							<td class="chocoActions">
 								<a class="btn btn-danger" href="deleteChoco.html?id=${choco.id}">Supprimer</a>
 								<a class="btn btn-primary" href="admin.html?id=${choco.id}">Modifier</a>
@@ -45,7 +48,7 @@
 			</table>
 		</div>
 		<div class="chocoForm">
-			<h2>${ isEdit ? "Modifier un type" : "Nouveau type" }:</h2>
+			<h2>${ isEdit ? "Modifier un type" : "Nouveau type" } :</h2>
 			<form:form modelAttribute="chocoType" method="post">
 				<c:if test="${isEdit}">
 					<!-- Prise en compte de l'attribut id seulement pour la mise à jour. -->
@@ -58,6 +61,10 @@
 				<div class="form-group">
 					<label for="value">Valeur métier :</label>
 					<form:input id="value" path="value" class="form-control" />
+				</div>
+				<div class="form-group">
+					<label for="url">URL de l'image :</label>
+					<form:input id="url" path="url" class="form-control" />
 				</div>
 				<button class="btn btn-primary">Valider</button>
 				<button type="reset" class="btn btn-warning">Annuler</button>

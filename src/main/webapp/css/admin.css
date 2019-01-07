@@ -1,6 +1,8 @@
 /* Global */
-body > div.container {
+div.admin-container {
 	margin-top: 120px;
+	margin-left: 20px;
+	margin-right: 20px;
 }
 
 h1, h2 {
@@ -15,10 +17,15 @@ div.chocoList, div.chocoForm {
 /* Tableau */
 th, td {
 	text-align: center;
+	word-break: break-all;
 }
 
 div.chocoList {
 	float: left;
+}
+
+th.url {
+	width: 300px;
 }
 
 th.chocoActions {

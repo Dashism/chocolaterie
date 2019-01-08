@@ -14,6 +14,7 @@ import fr.formation.choco.metier.ChocoOrder;
 import fr.formation.choco.metier.ChocoService;
 import fr.formation.choco.metier.ChocoType;
 import fr.formation.choco.metier.OrderService;
+import fr.formation.choco.metier.OriginService;
 
 @Controller
 @RequestMapping("/")
@@ -28,6 +29,9 @@ public class ViewController {
 	@Autowired
 	private OrderService orderService;
 	
+	@Autowired
+	private OriginService originService;
+	
 	@RequestMapping({ "", "index"})
 	public ModelAndView index() {
 		return new ModelAndView("index");
@@ -35,7 +39,9 @@ public class ViewController {
 
 	@RequestMapping("origins")
 	public ModelAndView origins() {
-		return new ModelAndView("origins");
+		ModelAndView mav = new ModelAndView("origins");
+		mav.addObject("typesByOrigin", this.originService.getAllTypesByOrigin());
+		return mav;
 	}
 	
 	@RequestMapping("chocolates")

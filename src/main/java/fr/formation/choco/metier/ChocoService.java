@@ -36,4 +36,8 @@ public class ChocoService {
 	public ChocoType getByValue(String value) {
 		return this.dao.findByValue(value);
 	}
+	
+	public List<ChocoType> getAllByOrigin(Integer originId) {
+		return this.dao.findByOriginId(originId);
+	}
 }

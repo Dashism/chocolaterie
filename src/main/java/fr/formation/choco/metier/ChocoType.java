@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
@@ -28,6 +30,18 @@ public class ChocoType {
 	
 	@Column
 	private String url;
+	
+	@ManyToOne
+	@JoinColumn(name="origin_id", referencedColumnName="id")
+	private ChocoOrigin origin;
+
+	public ChocoOrigin getOrigin() {
+		return origin;
+	}
+
+	public void setOrigin(ChocoOrigin origin) {
+		this.origin = origin;
+	}
 
 	public ChocoType() {
 	}
